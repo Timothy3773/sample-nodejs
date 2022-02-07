@@ -13,7 +13,7 @@ var router = express.Router();
 function index(req, res) {
   
 
-  res.render('random', {title: "hi"});
+  res.send({msg: "ok"});
 }
 
 router.all('*', index);
