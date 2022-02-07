@@ -16,7 +16,7 @@ function index(req, res) {
   res.send({msg: "ok"});
 }
 
-router.all('*', index);
+router.all('/', index);
 
 // console.log(lorem.generateParagraphs(7));
 
