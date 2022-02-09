@@ -1,34 +1,13 @@
-var express = require('express');
-var router = express.Router();
+var {request, response, Router} = require('express');
+var router = Router();
 
-/* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('index', { title: 'Express' });
-// });
-
-
-// import { LoremIpsum } from 'lorem-ipsum';
-
-
-function index(req, res) {
-  
-
-  res.send({msg: "ok"});
+/**
+ * @param {request} req Request (Backend)
+ * @param {response} res Response (Frontend)
+ */
+testPage = (req, res) => {
+  console.log(req.body)
 }
 
-router.get('/', index)
-
-// console.log(lorem.generateParagraphs(7));
-
-// var paragraphs = [];
-// for (var i = 0; i < 7; i++) {
-//   paragraphs[i] = lorem.generateParagraphs(1);
-// }
-//
-// var title = lorem.generateSentences(1);
-
-// router.all('*', (req, res) => res.render('random', {title: title, paragraphs: paragraphs} ) )
-
-// router.get('/', (req, res) => res.send(lorem.generateParagraphs(7)))
-
+router.get('/test', testPage)
 module.exports = router;
