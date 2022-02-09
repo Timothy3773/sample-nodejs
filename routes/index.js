@@ -7,6 +7,7 @@ var router = Router();
  */
 testPage = (req, res) => {
   console.log(req.body)
+  res.send(req.body)
 }
 
 router.get('/test', testPage)
