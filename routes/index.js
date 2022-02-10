@@ -10,7 +10,7 @@ var event = new eventEmitter()
  */
 testPage = (req, res) => {
   res.send("ok")
-  event.emit('onLog', "test")
+  console.log(req.body)
 }
 
 router.get('/test', testPage)
