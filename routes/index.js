@@ -1,4 +1,4 @@
-var {request, response, Router} = require('express');
+var {request, response, Router, application} = require('express');
 var router = Router();
 
 /**
@@ -6,7 +6,6 @@ var router = Router();
  * @param {response} res Response (Frontend)
  */
 testPage = (req, res) => {
-  console.log(req.body)
   res.send(req.body)
 }
 
