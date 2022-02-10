@@ -2,7 +2,7 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var eventEmitter = require('events')
+global.eventEmitter = require('events')
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
@@ -21,12 +21,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-var onLog = new eventEmitter()
+var event = new global.eventEmitter()
 
-onLog.on('onLog', (data) => {
+event.on('onLog', (data) => {
   console.log(data)
 })
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -1,8 +1,6 @@
 var {request, response, Router, application} = require('express');
 var router = Router();
-var eventEmitter = require('events')
 
-var event = new eventEmitter()
 
 /**
  * @param {request} req Request (Backend)
@@ -10,7 +8,7 @@ var event = new eventEmitter()
  */
 testPage = (req, res) => {
   res.send("ok")
-  console.log(req.body)
+  global.eventEmitter.emit('onLog', 'hi')
 }
 
 router.get('/test', testPage)
