@@ -9,6 +9,7 @@ var event = new eventEmitter()
  * @param {response} res Response (Frontend)
  */
 testPage = (req, res) => {
+  res.send("ok")
   event.emit('onLog', "test")
 }
 
